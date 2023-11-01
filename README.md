@@ -1,27 +1,20 @@
-# React + TypeScript + Vite
+# Frontend Engineer: Technical Challenge PayPal Button
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Task
 
-Currently, two official plugins are available:
+Take a look at the component `PayPalButton`, located in `/src/PayPalButton.tsx`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Take a look at the component PaypalButton, located in /src/PaypalButton.tsx.
+2. What issues with it can you spot?
+    *Answer*:
 
-## Expanding the ESLint configuration
+    ```txt
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+    ```
 
-- Configure the top-level `parserOptions` property like this:
+3. Re-factor the class component into a functional component, while applying improvements regarding the problems you noted before and any other optimizations.
+4. Bonus: Get rid of the HOC connect component (perhaps by utilising other available APIs).
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Note: The component uses [PayPal SDK](https://developer.paypal.com/docs/business/javascript-sdk/javascript-sdk-reference/). Keep in mind that due to the mock returning a fake value `onAccept` will never be executed in this demo and the expected result is the SDK failing with `500` while trying to call `https://www.sandbox.paypal.com/smart/api/payment/fake_paypal_token/ectoken`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The component also utilises [formik](https://formik.org/) as form/state management library.
